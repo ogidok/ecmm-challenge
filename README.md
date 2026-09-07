@@ -97,7 +97,15 @@ de la prueba. Una vez vencido ese plazo, no se recibirán nuevas entregas.
 
 ### Instrucciones de ejecución
 
-**Requisitos previos:** Python 3.10+, Node.js 18+, npm.
+**Requisitos previos:**
+- **Python 3.10+**: [python.org](https://www.python.org/downloads/)
+- **Node.js 18+ (incluye npm)**:
+  - Descargar e instalar la versión LTS desde [nodejs.org](https://nodejs.org/) (al instalar Node.js, `npm` se incluye e instala automáticamente).
+  - O mediante gestores de paquetes:
+    - **Windows:** `winget install OpenJS.NodeJS.LTS` o instalador `.msi`.
+    - **macOS:** `brew install node`
+    - **Linux (Debian/Ubuntu):** `sudo apt update && sudo apt install nodejs npm` (o vía [nvm](https://github.com/nvm-sh/nvm)).
+
 
 #### Backend (Django REST Framework)
 
