@@ -149,7 +149,7 @@ Usar `rest_framework.test.APITestCase` y `APIClient`.
 
 **Requisito README:** "La interfaz debe permitir, como mínimo: Visualizar el listado de productos. Crear un producto mediante un formulario. Filtrar o buscar productos."
 
-#### 3.1.1 Listado de productos
+#### 3.1.1 Listado de productos — [COMPLETADO]
 - Componente que haga `GET /api/products/` y muestre los productos.
 - Mostrar al menos: nombre, descripción, precio, stock, categoría, fecha de creación.
 
