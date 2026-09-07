@@ -103,6 +103,16 @@ de la prueba. Una vez vencido ese plazo, no se recibirán nuevas entregas.
 
 ```bash
 cd backend
+python -m venv venv
+source venv/bin/activate   # En Windows: venv\Scripts\activate
+```
+
+> **Nota Windows:** Si aparece el error *"la ejecución de scripts está deshabilitada en este sistema"*, ejecuta primero en PowerShell como administrador:
+> ```powershell
+> Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+> ```
+
+```bash
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver
