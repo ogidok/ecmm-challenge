@@ -116,7 +116,7 @@ GET/POST       /api/categories/
 GET/PUT/PATCH/DELETE  /api/categories/{id}/
 ```
 
-### 2.5 Migraciones
+### 2.5 Migraciones — [COMPLETADO]
 
 **Requisito README:** "Migraciones de base de datos"
 
@@ -124,7 +124,7 @@ GET/PUT/PATCH/DELETE  /api/categories/{id}/
 - Ejecutar `python manage.py migrate`.
 - Incluir los archivos de migración en el repositorio.
 
-### 2.6 Pruebas Automatizadas (`products/tests.py`)
+### 2.6 Pruebas Automatizadas (`products/tests.py`) — [COMPLETADO]
 
 **Requisito README:** "Al menos dos pruebas automatizadas: creación correcta de un producto y rechazo de datos inválidos."
 
