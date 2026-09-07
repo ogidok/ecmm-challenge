@@ -94,20 +94,67 @@ de la prueba. Una vez vencido ese plazo, no se recibirán nuevas entregas.
 
 ## Anotaciones del postulante
 
-Completa este espacio antes de entregar tu solución.
 
 ### Instrucciones de ejecución
 
-Indica los comandos necesarios para instalar las dependencias, configurar la base
-de datos, ejecutar el backend, ejecutar la interfaz y correr las pruebas. La
-solución debe poder levantarse siguiendo únicamente estas instrucciones.
+**Requisitos previos:** Python 3.10+, Node.js 18+, npm.
+
+#### Backend (Django REST Framework)
+
+```bash
+cd backend
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
+```
+
+El backend queda disponible en `http://localhost:8000/api/`.
+
+Para crear categorías iniciales de prueba:
+
+```bash
+cd backend
+python manage.py shell -c "
+from products.models import Category
+Category.objects.get_or_create(name='Electrónica')
+Category.objects.get_or_create(name='Hogar')
+Category.objects.get_or_create(name='Oficina')
+print('Categorías creadas')
+"
+```
+
+#### Frontend (React + Vite)
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+El frontend queda disponible en `http://localhost:5173/`.
+
+#### Pruebas automatizadas
+
+```bash
+cd backend
+python manage.py test
+```
 
 ### Decisiones y observaciones
 
-Describe brevemente cualquier decisión técnica relevante, supuesto, limitación o
-mejora pendiente.
+- **Framework frontend:** Se eligió Vite + React (sin TypeScript) por ser la opción más simple y adecuada al alcance del challenge de 90 minutos.
+- **Filtrado y búsqueda:** Se implementaron ambos (por categoría y por nombre) aunque el README indica "filtrar o buscar". El esfuerzo adicional fue mínimo y cubre mejor el requisito.
+- **`on_delete=PROTECT` en la FK de categoría:** El README no especifica qué hacer al eliminar una categoría con productos asociados. Se optó por `PROTECT` para evitar borrado accidental de datos relacionados.
+- **`description` como campo opcional:** El README no lo incluye en la lista de campos obligatorios ("Nombre, precio, stock y categoría son obligatorios"), por lo que se trató como `blank=True`.
+- **CORS:** Se habilitó `CORS_ALLOW_ALL_ORIGINS = True` para permitir la comunicación entre el frontend (puerto 5173) y el backend (puerto 8000) en desarrollo.
+- **Mensajes de validación en español:** Se personalizaron todos los mensajes de error de validación para que sean claros y en español.
+- **Sin autenticación, carrito, órdenes, pagos ni despliegue**, conforme a lo indicado en el README.
 
 ### Herramientas de IA utilizadas
 
-Si utilizaste herramientas de IA, indica cuáles y para qué. Si no utilizaste
-ninguna, indícalo también.
+Se utilizó un asistente de IA (Antigravity / Claude) como apoyo para:
+- Generar la estructura inicial del proyecto y el plan de implementación.
+- Escribir modelos, serializers, vistas, tests y componentes React.
+- Revisar validaciones y mensajes de error.
+
+Todo el código fue revisado y comprendido antes de incorporarlo a la solución.

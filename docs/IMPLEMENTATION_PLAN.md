@@ -206,11 +206,11 @@ src/
 
 Según la sección "Entregables" del README:
 
-- [ ] API funcional (CRUD productos, CRUD categorías, filtro por categoría, búsqueda por nombre).
-- [ ] Interfaz web funcional (listado, formulario de creación, filtro/búsqueda).
-- [ ] Migraciones de base de datos incluidas en el repositorio.
-- [ ] Al menos dos pruebas automatizadas (creación correcta + rechazo de datos inválidos).
-- [ ] Instrucciones completas para ejecutar el proyecto (sección "Anotaciones del postulante" en README).
+- [x] API funcional (CRUD productos, CRUD categorías, filtro por categoría, búsqueda por nombre).
+- [x] Interfaz web funcional (listado, formulario de creación, filtro/búsqueda).
+- [x] Migraciones de base de datos incluidas en el repositorio.
+- [x] Al menos dos pruebas automatizadas (creación correcta + rechazo de datos inválidos).
+- [x] Instrucciones completas para ejecutar el proyecto (sección "Anotaciones del postulante" en README).
 
 ---
 
