@@ -1,12 +1,23 @@
 import { useState, useEffect } from 'react';
-import { fetchProducts } from './api';
+import { fetchProducts, fetchCategories } from './api';
 import ProductList from './components/ProductList';
+import ProductForm from './components/ProductForm';
 import './App.css';
 
 function App() {
   const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const loadCategories = async () => {
+    try {
+      const data = await fetchCategories();
+      setCategories(data);
+    } catch (err) {
+      console.error('Error al cargar categorías:', err);
+    }
+  };
 
   const loadProducts = async () => {
     try {
@@ -22,8 +33,13 @@ function App() {
   };
 
   useEffect(() => {
+    loadCategories();
     loadProducts();
   }, []);
+
+  const handleProductCreated = () => {
+    loadProducts();
+  };
 
   return (
     <div className="app-layout">
@@ -35,9 +51,27 @@ function App() {
       </header>
 
       <main className="app-main">
-        <section className="catalog-section">
+        {/* Formulario de Creación */}
+        <section className="form-section card-box">
           <div className="section-header">
-            <h2>Listado de Productos</h2>
+            <div>
+              <h2>Crear Producto</h2>
+              <p className="section-desc">Ingresa los datos para registrar un nuevo producto</p>
+            </div>
+          </div>
+          <ProductForm
+            categories={categories}
+            onProductCreated={handleProductCreated}
+          />
+        </section>
+
+        {/* Listado de Productos */}
+        <section className="catalog-section card-box">
+          <div className="section-header">
+            <div>
+              <h2>Listado de Productos</h2>
+              <p className="section-desc">Productos registrados en el catálogo</p>
+            </div>
             <span className="count-badge">{products.length} productos</span>
           </div>
 

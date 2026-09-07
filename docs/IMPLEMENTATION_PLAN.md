@@ -153,7 +153,7 @@ Usar `rest_framework.test.APITestCase` y `APIClient`.
 - Componente que haga `GET /api/products/` y muestre los productos.
 - Mostrar al menos: nombre, descripción, precio, stock, categoría, fecha de creación.
 
-#### 3.1.2 Formulario de creación de producto
+#### 3.1.2 Formulario de creación de producto — [COMPLETADO]
 - Formulario con campos: nombre, descripción, precio, stock, categoría (selector).
 - El selector de categoría debe cargar las categorías desde `GET /api/categories/`.
 - Al enviar, hacer `POST /api/products/`.
