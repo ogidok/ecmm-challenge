@@ -41,7 +41,7 @@ ecmm-challenge/
 
 ## 2. Backend — Django + Django REST Framework
 
-### 2.1 Modelos (`products/models.py`)
+### 2.1 Modelos (`products/models.py`) — [COMPLETADO]
 
 **Requisito README:** "Una categoría debe contener: nombre" / "Un producto debe contener: nombre, descripción, precio, stock, categoría, fecha de creación"
 
