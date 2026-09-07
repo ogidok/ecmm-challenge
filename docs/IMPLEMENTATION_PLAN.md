@@ -62,7 +62,7 @@ ecmm-challenge/
 
 **Nota sobre `on_delete`:** El README no especifica qué hacer al eliminar una categoría con productos asociados. `PROTECT` es la decisión más segura (impide borrar la categoría si tiene productos). Se señala como **ambigüedad** — otra opción sería `CASCADE`.
 
-### 2.2 Serializers (`products/serializers.py`) — ARCHIVO POR CREAR
+### 2.2 Serializers (`products/serializers.py`) — [COMPLETADO]
 
 **Requisito README:** "Uso adecuado de modelos, serializers y vistas"
 
