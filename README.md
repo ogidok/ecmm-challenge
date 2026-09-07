@@ -109,49 +109,55 @@ de la prueba. Una vez vencido ese plazo, no se recibirán nuevas entregas.
 
 #### Backend (Django REST Framework)
 
-```bash
-cd backend
-python -m venv venv
-source venv/bin/activate   # En Windows: venv\Scripts\activate
-```
+1. **Crear y activar el entorno virtual:**
+   ```bash
+   cd backend
+   python -m venv venv
+   source venv/bin/activate   # En Windows: venv\Scripts\activate
+   ```
 
-> **Nota Windows:** Si aparece el error *"la ejecución de scripts está deshabilitada en este sistema"*, ejecuta primero en PowerShell como administrador:
-> ```powershell
-> Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-> ```
+   > **Nota Windows:** Si al activar el entorno virtual aparece el error *"la ejecución de scripts está deshabilitada en este sistema"*, ejecuta en PowerShell como administrador:
+   > ```powershell
+   > Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+   > ```
 
-```bash
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py runserver
-```
+2. **Instalar dependencias y preparar la base de datos:**
+   ```bash
+   pip install -r requirements.txt
+   python manage.py migrate
+   ```
 
-El backend queda disponible en `http://localhost:8000/api/`.
+3. **Cargar categorías iniciales de prueba:**
+   *(Recomendado para poder crear y filtrar productos de inmediato)*
+   ```bash
+   python manage.py shell -c "from products.models import Category; Category.objects.get_or_create(name='Electrónica'); Category.objects.get_or_create(name='Hogar'); Category.objects.get_or_create(name='Oficina'); print('Categorías creadas')"
+   ```
 
-Para crear categorías iniciales de prueba:
+4. **Iniciar el servidor:**
+   ```bash
+   python manage.py runserver
+   ```
+   El backend queda disponible en `http://localhost:8000/api/`.
 
-```bash
-cd backend
-python manage.py shell -c "
-from products.models import Category
-Category.objects.get_or_create(name='Electrónica')
-Category.objects.get_or_create(name='Hogar')
-Category.objects.get_or_create(name='Oficina')
-print('Categorías creadas')
-"
-```
+---
 
 #### Frontend (React + Vite)
 
-```bash
-cd frontend
-npm install
-npm run dev
-```
+En una **segunda terminal**:
 
-El frontend queda disponible en `http://localhost:5173/`.
+1. **Instalar dependencias e iniciar:**
+   ```bash
+   cd frontend
+   npm install
+   npm run dev
+   ```
+   El frontend queda disponible en `http://localhost:5173/`.
+
+---
 
 #### Pruebas automatizadas
+
+En la terminal del backend (con el entorno virtual activo):
 
 ```bash
 cd backend
