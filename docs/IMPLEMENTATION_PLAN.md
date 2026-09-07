@@ -101,11 +101,11 @@ ecmm-challenge/
 
 Implementar filtrado/búsqueda usando `django-filter` **o** sobreescribiendo `get_queryset()` con parámetros de query. Dado que el README dice "La elección de herramientas adicionales queda a criterio del postulante", ambas opciones son válidas. Sobreescribir `get_queryset()` es la opción más simple y sin dependencias extra.
 
-### 2.4 URLs (`products/urls.py` y `backend/urls.py`)
+### 2.4 URLs (`products/urls.py` y `backend/urls.py`) — [COMPLETADO]
 
 **Requisito README:** "La organización de endpoints … queda a criterio del postulante"
 
-- `products/urls.py` — POR CREAR: usar `DefaultRouter` de DRF para registrar los ViewSets.
+- `products/urls.py` — usar `DefaultRouter` de DRF para registrar los ViewSets.
 - `backend/urls.py` — incluir las URLs de products bajo el prefijo `/api/`.
 
 Endpoints resultantes:
