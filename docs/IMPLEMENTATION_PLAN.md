@@ -159,7 +159,7 @@ Usar `rest_framework.test.APITestCase` y `APIClient`.
 - Al enviar, hacer `POST /api/products/`.
 - Mostrar errores de validación devueltos por la API.
 
-#### 3.1.3 Filtro/búsqueda de productos
+#### 3.1.3 Filtro/búsqueda de productos — [COMPLETADO]
 - Campo de búsqueda por nombre → enviar `?search=texto` a la API.
 - Filtro por categoría → enviar `?category=ID` a la API.
 - Al menos uno de estos dos. El README dice "Filtrar **o** buscar productos" (el "o" da flexibilidad, pero implementar ambos es simple y cubre mejor el requisito).

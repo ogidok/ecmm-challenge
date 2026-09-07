@@ -328,3 +328,65 @@ body {
   color: #166534;
 }
 
+/* Filter bar */
+.product-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-end;
+  background-color: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-group.search-group {
+  flex: 2;
+  min-width: 240px;
+}
+
+.filter-group.category-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+.filter-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.filter-input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.filter-actions {
+  display: flex;
+  align-items: flex-end;
+}
+
+.btn-secondary {
+  background-color: #e2e8f0;
+  color: #334155;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: #cbd5e1;
+}
+
+.clear-btn {
+  padding: 0.65rem 1rem;
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
