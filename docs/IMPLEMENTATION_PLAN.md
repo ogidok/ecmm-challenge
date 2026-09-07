@@ -82,7 +82,7 @@ ecmm-challenge/
 
 **Requisito README:** "Los errores de validación deben devolver una respuesta HTTP apropiada y comprensible" → DRF retorna `400 Bad Request` con detalle por campo por defecto. Asegurar que los mensajes de error sean claros.
 
-### 2.3 Vistas (`products/views.py`)
+### 2.3 Vistas (`products/views.py`) — [COMPLETADO]
 
 **Requisito README:** "Listar productos y consultar uno por su ID. Crear, editar y eliminar productos. Filtrar productos por categoría. Buscar productos por nombre."
 
