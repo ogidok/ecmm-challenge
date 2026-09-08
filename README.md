@@ -98,7 +98,7 @@ de la prueba. Una vez vencido ese plazo, no se recibirán nuevas entregas.
 ### Instrucciones de ejecución
 
 **Requisitos previos:**
-- **Python 3.10+**: [python.org](https://www.python.org/downloads/)
+- **Python 3.12+**: [python.org](https://www.python.org/downloads/)
 - **Node.js 18+ (incluye npm)**:
   - Descargar e instalar la versión LTS desde [nodejs.org](https://nodejs.org/) (al instalar Node.js, `npm` se incluye e instala automáticamente).
   - O mediante gestores de paquetes:
